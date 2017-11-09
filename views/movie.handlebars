@@ -1,0 +1,50 @@
+
+<div>
+
+    <h1>{{movie.title}}({{movie.year}})</h1>
+    <hr/>
+
+
+    <div class="playex">
+        <div id="option-1" class="play-box-shortcode fixidtab">
+            <script src="http://openloadmovies.tv/wp-content/plugins/apiplayer/jwplayer/jwplayer.js"></script>
+            <script type="text/javascript">jwplayer.key="dWwDdbLI0ul1clbtlw+4/UHPxlYmLoE9Ii9QEw==";</script>
+            <div id="jwplayer-736626211"></div>
+            <script type="text/javascript">
+                jwplayer("jwplayer-736626211").setup({
+                    sources: [{"file":"{{movie.url}}","label":"360p","type":"video\/mp4"}],
+                    autostart: "true",
+                    width: "100%",
+                    aspectratio: "16:9",
+                    primary: "html5",
+                });
+            </script>
+
+            <script type="text/javascript">
+                var GoogleVideoName = "";
+                var player = jwplayer("jwplayer-736626211");
+                player.addButton(
+                        //This portion is what designates the graphic used for the button
+                        "//i.imgur.com/cAHz5k9.png",
+                        "Download Video",
+                        function() {
+                            var kI = player.getPlaylistItem(),
+                                    kcQ = player.getCurrentQuality();
+                            if(kcQ < 0) { kcQ =0;}
+                            //var kF = kI.sources[kcQ].file+"?itag="+kcQ+"&type=video/mp4&title=";
+                            //console.log(kF);
+
+                            var kF = kI.sources[kcQ].file;
+                            window.open(kF,"_blank");
+                        },
+                        "download"
+                );
+            </script>
+        </div>
+    </div>
+    <hr>
+    <h7>IMDB Rating: {{movie.imdbRating}}</h7><br>
+    <h7>Users Rating: {{movie.rating}}</h7><br>
+    <h7>Description:</h7><br>
+    <p>{{movie.description}}</p>
+</div>

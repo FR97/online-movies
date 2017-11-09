@@ -1,0 +1,17 @@
+
+
+a {
+  color: #00B7FF;
+}
+.genre-label{
+  font-size: 10px;
+}
+.btn-watch-now{
+  width: 300px;
+}
+.movies-list {
+  min-height: 50rem; /* Can be removed; just added for demo purposes */
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #f7f7f7;
+}

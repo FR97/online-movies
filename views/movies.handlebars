@@ -1,0 +1,21 @@
+{{#if movies}}
+    <div class="movies-list">
+        <div class="container">
+            <div class="row">
+                {{#each movies}}
+                    <div class="col-6 col-sm-6 col-lg-4">
+                        <h2>{{title}}({{year}})</h2>
+                        <a href="/movies/watch/{{id}}"><img src="/images/{{imgPath}}" width="300" height="300"/></a><br>
+                        <a class="btn btn-default btn-watch-now" href="/movies/watch/{{id}}" role="button">Watch now &raquo;</a><br>
+                        <span>Genres:</span>
+                        {{#each genres}}
+                            <span class="label label-info genre-label">{{this}}</span>
+                        {{/each}}
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+{{else}}
+    <h1>No movies</h1>
+{{/if}}

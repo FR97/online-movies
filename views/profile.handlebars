@@ -1,0 +1,59 @@
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Profile Info</th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr>
+            <td>Username:</td>
+            <td><strong>{{user.username}}</strong></td>
+            <td>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="newUsername" placeholder="Change username">
+                    <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" id="updateUsername">Save</button>
+                        </span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><strong>{{user.email}}</strong></td>
+            <td>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="newEmail" placeholder="Change email">
+                    <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" id="updateEmail">Save</button>
+                        </span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Old password:</td>
+            <td></td>
+            <td>
+                <div class="input-group">
+                    <input type="password" class="form-control" id="oldPassword" placeholder="Old password">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>New password:</td>
+            <td></td>
+            <td>
+                <div class="input-group">
+                    <input type="password" class="form-control" id="newPassword" placeholder="New password">
+                    <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" id="updatePassword">Save</button>
+                    </span>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,42 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><i class="fa fa-film"></i></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li {{#advancedIf page '==' 'home'}}class='active'{{/advancedIf}}><a href="/">Home <span class="sr-only">(current)</span></a></li>
+                <li {{#advancedIf page '==' 'movies'}}class='active'{{/advancedIf}}><a href="/movies/">Movies</a></li>
+                {{#if user}}
+                    {{#advancedIf user.role '==' 'admin'}}
+                        <li {{#advancedIf page '==' 'all-users'}}class='active'{{/advancedIf}}><a href="/users/">All Users</a></li>
+                    {{/advancedIf}}
+
+                {{/if}}
+                </li>
+            </ul>
+            <ul class="nav navbar-nav havbar-center">
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {{#if user}}
+                    <li><a href="/movies/favorites"><i class="fa fa-heart-o" aria-hidden="true"></i> Favorites</a></li>
+                    <li {{#advancedIf page '==' 'profile'}}class='active'{{/advancedIf}}><a href="/users/profile"><strong>{{user.username}}</strong></a></li>
+                    <li><a href="/users/logout"><span class="glyphicon glyphicon-log-in" style="margin-right: 8px"></span>Logout</a></li>
+                {{else}}
+                    <li {{#advancedIf page '==' 'register'}}class='active'{{/advancedIf}}><a href="/users/register"><span class="glyphicon glyphicon-user" style="margin-right: 8px"></span>Register</a></li>
+                    <li {{#advancedIf page '==' 'login'}}class='active'{{/advancedIf}}><a href="/users/login"><span class="glyphicon glyphicon-log-in" style="margin-right: 8px"></span>Login</a></li>
+                {{/if}}
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
