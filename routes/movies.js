@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('passport');
 const Movie = require('../models/movie');
 
 router.get('/', (req, res) =>{
@@ -30,9 +31,9 @@ router.get('/favorites',(req, res) =>{
 
 
 router.get('/watch/:id', (req, res) =>{
-    let requestedMovie;
+
     Movie.findById(req.params.id,(err, movie)=>{
-        console.log(movie);
+
         if(err) throw err;
 
         if(movie === undefined){
@@ -44,13 +45,12 @@ router.get('/watch/:id', (req, res) =>{
     });
 
 
+});
 
+router.post('/', (req, res)=>{
 
 
 });
-
-
-
 
 
 

@@ -16,18 +16,18 @@
             <ul class="nav navbar-nav">
                 <li {{#advancedIf page '==' 'home'}}class='active'{{/advancedIf}}><a href="/">Home <span class="sr-only">(current)</span></a></li>
                 <li {{#advancedIf page '==' 'movies'}}class='active'{{/advancedIf}}><a href="/movies/">Movies</a></li>
-                {{#if user}}
-                    {{#advancedIf user.role '==' 'admin'}}
-                        <li {{#advancedIf page '==' 'all-users'}}class='active'{{/advancedIf}}><a href="/users/">All Users</a></li>
-                    {{/advancedIf}}
 
-                {{/if}}
-                </li>
             </ul>
             <ul class="nav navbar-nav havbar-center">
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                {{#if user}}
+                    {{#advancedIf user.role '==' 'admin'}}
+                        <li {{#advancedIf page '==' 'admin-tools'}}class='active'{{/advancedIf}}><a href="/admin-tools/">Admin tools</a></li>
+                    {{/advancedIf}}
+
+                {{/if}}
                 {{#if user}}
                     <li><a href="/movies/favorites"><i class="fa fa-heart-o" aria-hidden="true"></i> Favorites</a></li>
                     <li {{#advancedIf page '==' 'profile'}}class='active'{{/advancedIf}}><a href="/users/profile"><strong>{{user.username}}</strong></a></li>
